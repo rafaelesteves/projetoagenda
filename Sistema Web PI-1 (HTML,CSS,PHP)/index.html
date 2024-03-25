@@ -1,0 +1,240 @@
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento | Estética Beleza</title>
+    <link rel="stylesheet" href="style.css" class="float-right"> 
+
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(to right, rgb(142, 25, 225), rgb(199, 92, 228));
+           
+
+        }
+        .box{
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 15px;
+            width: 20%;
+}
+fieldset{
+    border: 3px solid rgb(199, 110, 244);
+}
+legend{
+    border: 1px solid darkorchid;
+    padding: 10px; 
+    text-align: center;
+    background-color: rgb(172, 105, 234);
+    border-radius: 10px;
+    
+}
+
+    
+
+.inputBox{
+    position:relative;
+}
+.inputUser{
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    width: 100%;
+    letter-spacing:2px ;
+    
+
+}
+.labelInput{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+    transition: .5s;
+
+}
+.inputUser:focus ~ .labelInput,
+.inputUser:valid ~.labelInput{
+    top: -20px;
+    font-size: 12px;
+    color: darkorchid;
+}
+#datanas{
+            border: none;
+            padding: 8px;
+            border-radius: 10px;
+            outline: none;
+            font-size: 15px;
+            text-align: center;
+} 
+#data{
+    border: none;
+            padding: 8px;
+            border-radius: 7px;
+            outline: none;
+            font-size: 10px;
+            top: -10px;
+            text-align: center;
+            transform: translate(200%,-250%)
+          
+
+            
+           
+            
+
+}  
+#time{
+    border: none;
+            padding: 8px;
+            border-radius: 6px;
+            outline: none;
+            font-size: 10px;
+            top: -10px;
+
+}
+
+
+
+h2 {
+  text-align:center;
+  position: relative;
+  top: -39px;
+  left: 30px;
+  font-size: 103%;
+}
+
+
+
+
+
+#submit{
+            background-image: linear-gradient(to right,rgb(189, 81, 235), rgb(170, 81, 238));
+            width: 100%;
+            border: none;
+            padding: 15px;  
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class ="box">
+        <form action = "config.php" method="POST">
+            <fieldset>
+                <legend><b>Agendamento de Clientes</b></legend> 
+                
+                <br>
+                <div class="inputBox">
+                    <input type="text" name="nome" id="nome" class="inputUser" required>
+                    <label for="nome" class="labelInput"> Nome completo</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="text" name="email" id="email" class="inputUser" required>
+                    <label for="email"class="labelInput"> Email</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="tel" name="telefone" id="telefone" class="inputUser" required>
+                    <label for="telefone"class="labelInput"> Telefone</label>
+                </div>
+                <br>
+                <p>Sexo:</p>
+                <input type="radio" id="feminino" name="genero" value="feminino" required>
+                <label for="feminino">Feminino</label>
+                
+                <input type="radio" id="masculino" name="genero" value="masculino" required>
+                <label for="masculino">Masculino</label>
+                
+                <input type="radio" id="outro" name="genero" value="outro" required>
+                <label for="outro">Outro</label>
+                <br><br>
+                <div>
+                
+                    <label for="datanas"> <b>Data de Nascimento:</b></label>
+                    <input type="date" name="datanas" id="datanas"  required>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="text" name="cidade" id="cidade" class="inputUser" required>
+                    <label for="cidade"class="labelInput"> Cidade</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="text" name="estado" id="estado" class="inputUser" required>
+                    <label for="estado"class="labelInput"> Estado</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="text" name="endereco" id="endereco" class="inputUser" required>
+                    <label for="endereco"class="labelInput"> Endereço</label>
+                </div>
+                
+              
+              
+                  <div >
+                    <p><h3>Definir tipo de serviço:</h3>
+                        <input type="checkbox" name="service" 
+ value="limpeza de pele" checked="checked" /> Limpeza de pele 
+ <input type="checkbox" name="service" 
+ value="Depilacao Corporal" /> Depilação corporal
+ <input type="checkbox" name="service" 
+ value="Cutilagem spa" /> Cutilagem / SPA
+ <input type="checkbox" name="service" 
+ value="Design de Sob" checked="checked" /> Design de sombracelha c/Henna
+ <input type="checkbox" name="service" 
+ value="Micropigmentacao" checked="checked" /> Micropigmentacão
+ <input type="checkbox" name="service" 
+ value="Massagem Modeladora" checked="checked" /> Massagem modeladora
+ <input type="checkbox" name="service" 
+ value="Massagem Modeladora" checked="checked" /> Hidra gloss / BB Glow
+ <input type="checkbox" name="service" 
+ value="Extensao de cilios" checked="checked" /> Extensão de cílios
+ <input type="checkbox" name="service" 
+ value="Cabeleireira" checked="checked" /> Cabeleireira
+</p>
+</form> 
+<p><b><h3>Definir a data e hora:</h3></b></p>
+            
+                
+<div >
+     <label for="time"> <b>Horas:</b></label>
+    <input type="time" name="time" id="time"  ></div>     
+
+<div class="container">
+    <b><h2>Data:</h2></b>
+   <label for="data">  </label>
+    <input type="date" name="data" id="data"  > 
+
+  </div>
+  <p class="moved-paragraph">Cleide Alves  
+    <i>Estética. </i></p>
+                 
+                        
+                <input type="submit" name="submit" id="submit">
+               
+
+
+            </fieldset>
+        </form>
+    </div>
+    
+</body>
+</html>

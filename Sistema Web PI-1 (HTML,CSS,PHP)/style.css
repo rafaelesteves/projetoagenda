@@ -1,0 +1,22 @@
+
+  
+  p.moved-paragraph {
+    margin: -50px 20px 10px 45px; /* adiciona margem : topo e lados */
+    font-size: medium; /* tamanho da fonte do rodapé*/
+    text-align:center; /*centralizar opcional*/
+   
+  }
+
+.agendamentos {  
+    display: flex;
+    flex-flow: column;
+    background: #80029c;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+    
+
+  

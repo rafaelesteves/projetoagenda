@@ -13,25 +13,35 @@
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
-            background-image: linear-gradient(to right, rgb(142, 25, 225), rgb(199, 92, 228));
+            background-image: linear-gradient(to right, rgb(174, 50, 231), rgb(174, 50, 231));
+            
+
            
 
         }
-        .box{
-            color: white;
+
+        .caixa{
+            color: rgb(255, 255, 255);
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 15px;
-            border-radius: 15px;
-            width: 20%;
-}
+            background-color: rgba(73, 11, 78, 0.7);
+            padding: 20px;  
+            border-radius: 20px;
+           
+        
+} 
+        
+
+        
+            
+        
+     
 fieldset{
-    border: 3px solid rgb(199, 110, 244);
+    border: 10px solid rgb(121, 0, 182); /*Define a cor da borda, espaçamento interno, alinhamento do texto, cor de fundo e borda arredondada*/
 }
-legend{
+legend{   /*fornecer uma legenda */
     border: 1px solid darkorchid;
     padding: 10px; 
     text-align: center;
@@ -39,13 +49,13 @@ legend{
     border-radius: 10px;
     
 }
-
+        
     
 
-.inputBox{
+.inputBox{ /*facilitar o posicionamento de outros elementos filhos.*/
     position:relative;
 }
-.inputUser{
+.inputUser{ /*define o campo em geral fundo/tqamanho/fonte*/
     background: none;
     border: none;
     border-bottom: 1px solid white;
@@ -58,7 +68,7 @@ legend{
 
 }
 .labelInput{
-    position: absolute;
+    position: absolute; /*estilizar as etiquetas dos campos de entrada.  quando coloca os dados*/
     top: 0px;
     left: 0px;
     pointer-events: none;
@@ -66,28 +76,32 @@ legend{
 
 }
 .inputUser:focus ~ .labelInput,
-.inputUser:valid ~.labelInput{
-    top: -20px;
+.inputUser:valid ~.labelInput{ /*Define o estilo para a etiqueta*/
+    top: -20px;  
     font-size: 12px;
     color: darkorchid;
 }
 #datanas{
             border: none;
-            padding: 8px;
+            padding: 8px;          /*estilo para data de nascimento*/
             border-radius: 10px;
             outline: none;
-            font-size: 15px;
+            font-size: 20px;
             text-align: center;
+            color: rgb(67, 5, 124);
 } 
-#data{
+#data{           /*estilos para data de agendamento e horário*/
     border: none;
             padding: 8px;
             border-radius: 7px;
             outline: none;
-            font-size: 10px;
-            top: -10px;
-            text-align: center;
-            transform: translate(200%,-250%)
+            color: rgb(75, 5, 141);
+            font-size: 20px;
+            top: -20px;
+            text-align: center; 
+            transform: translate(1%,-5%)
+            
+
           
 
             
@@ -95,31 +109,25 @@ legend{
             
 
 }  
-#time{
-    border: none;
-            padding: 8px;
-            border-radius: 6px;
-            outline: none;
-            font-size: 10px;
-            top: -10px;
 
-}
+          
 
 
 
-h2 {
+
+h2 {         /*Alinha o texto ao centro*/
   text-align:center;
   position: relative;
-  top: -39px;
-  left: 30px;
-  font-size: 103%;
+  top: 10px;
+  left:-348px;
+  font-size: 110%;
 }
 
 
 
 
 
-#submit{
+#submit{              /*fecha a seção o botão final */
             background-image: linear-gradient(to right,rgb(189, 81, 235), rgb(170, 81, 238));
             width: 100%;
             border: none;
@@ -130,12 +138,27 @@ h2 {
             border-radius: 10px;
         }
 
+        
+        
+
 
 
     </style>
-</head>
-<body>
-    <div class ="box">
+</head>       
+<body>     
+  
+     
+
+    <div id="aviso" class="aviso"> 
+        <span class="fechar" onclick="fecharAviso()">&times;</span>
+        <strong>Horário de funcionamento:  <strong></strong> </strong><br> <br> Terça-feira a sábado, das 8h às 19h30.
+      </div>
+      
+      <script src="script.js"></script>
+
+
+    
+    <div class ="caixa">
         <form action = "config.php" method="POST">
             <fieldset>
                 <legend><b>Agendamento de Clientes</b></legend> 
@@ -157,13 +180,13 @@ h2 {
                 </div>
                 <br>
                 <p>Sexo:</p>
-                <input type="radio" id="feminino" name="genero" value="feminino" required>
+                <input type="radio" class="genero" id="feminino" name="genero" value="feminino" required>
                 <label for="feminino">Feminino</label>
                 
-                <input type="radio" id="masculino" name="genero" value="masculino" required>
+                <input type="radio"  class="genero" id="masculino" name="genero" value="masculino" required>
                 <label for="masculino">Masculino</label>
                 
-                <input type="radio" id="outro" name="genero" value="outro" required>
+                <input type="radio"  class="genero" id="outro" name="genero" value="outro" required>
                 <label for="outro">Outro</label>
                 <br><br>
                 <div>
@@ -191,37 +214,46 @@ h2 {
               
                   <div >
                     <p><h3>Definir tipo de serviço:</h3>
-                        <input type="checkbox" name="service" 
+                        <input type="radio" name="service" 
  value="limpeza de pele" checked="checked" /> Limpeza de pele 
- <input type="checkbox" name="service" 
+ <input type="radio" name="service" 
  value="Depilacao Corporal" /> Depilação corporal
- <input type="checkbox" name="service" 
+ <input type="radio" name="service" 
  value="Cutilagem spa" /> Cutilagem / SPA
- <input type="checkbox" name="service" 
+ <input type="radio" name="service" 
  value="Design de Sob" checked="checked" /> Design de sombracelha c/Henna
- <input type="checkbox" name="service" 
+ <input type="radio" name="service" 
  value="Micropigmentacao" checked="checked" /> Micropigmentacão
- <input type="checkbox" name="service" 
+ <input type="radio" name="service" 
  value="Massagem Modeladora" checked="checked" /> Massagem modeladora
- <input type="checkbox" name="service" 
+ <input type="radio" name="service" 
  value="Massagem Modeladora" checked="checked" /> Hidra gloss / BB Glow
- <input type="checkbox" name="service" 
+ <input type="radio" name="service" 
  value="Extensao de cilios" checked="checked" /> Extensão de cílios
- <input type="checkbox" name="service" 
+ <input type="radio" name="service" 
  value="Cabeleireira" checked="checked" /> Cabeleireira
 </p>
-</form> 
-<p><b><h3>Definir a data e hora:</h3></b></p>
-            
-                
-<div >
-     <label for="time"> <b>Horas:</b></label>
-    <input type="time" name="time" id="time"  ></div>     
 
-<div class="container">
-    <b><h2>Data:</h2></b>
-   <label for="data">  </label>
-    <input type="date" name="data" id="data"  > 
+<br>
+
+            
+                    
+
+<div ><label for="data"><b>Definir data e horas:</b><br></label>
+    <br>
+    <input type="datetime-local" name="data" id="data"  required>
+    <br>
+
+
+
+
+  
+
+
+
+    <br> <br> <br> <br><br>
+
+
 
   </div>
   <p class="moved-paragraph">Cleide Alves  
@@ -230,7 +262,7 @@ h2 {
                         
                 <input type="submit" name="submit" id="submit">
                
-
+            </form> 
 
             </fieldset>
         </form>

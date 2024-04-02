@@ -8,15 +8,133 @@
   }
 
 .agendamentos {  
-    display: flex;
-    flex-flow: column;
-    background: #80029c;
-    padding: 20px;
+
+    background: #a506cd;
+    
     margin-top: 20px;
     border-radius: 15px;
     font-family: Arial, Helvetica, sans-serif;
 }
+ @media screen  and (max-width:758px){ /*esta parte é do formato de tela do celular*/
+ 
 
+   .aviso {                    /*arrumar isso é crucial, é notificação*/
+    padding: 2%;
+    background-color: #900f0f;
+    color: rgb(0, 0, 0) ;
+    position: fixed;
+    top: 10%;
+    width: 20%;
+    z-index: 1;
+    text-align: center;
+    border-radius: 20px;
+    margin: -5% 2% 1% 40%;
+    font-size: 20%;
     
+   
+    
+  }
+  
+
+    .caixa{
+      width: 88%;
+      margin-top: 88px;
+      background-image: linear-gradient(to right, rgb(200, 109, 241), rgb(186, 88, 231));
+    }
+    
+  
+     
+      
+  p.moved-paragraph {
+    margin: -50px 20px 10px 45px; /* adiciona margem : topo e lados */
+    font-size: small; /* tamanho da fonte do rodapé*/
+    text-align:center; /*centralizar opcional*/
+
+  }
+  
+
+ }
+
+
+
+
+
+ 
+
+ 
+ 
+   
+
+ 
+    
+   
+    
+
+
+
+
+  
+  .data{
+    border: none;
+    padding: 30px;
+    border-radius: 20px;
+    outline: none;
+    font-size: -120px;
+    text-align:  left;
+    color: rgb(248, 248, 248);
+    top: -30px;
+    left:-30px;
+ 
+
+  }
+  .aviso {
+    padding: 1%;
+    background-color: #f3f3f3;
+    color: rgb(0, 0, 0) ;
+    position: fixed;
+    top: 10%;
+    width: 20%;
+    z-index: 1;
+    text-align: center;
+    border-radius: 20px;
+    margin: -5% 2% 1% 40%;
+    font-size: 100%;
+   
+    
+   
+    
+  }
+  
+  .fechar {
+    color: rgb(231, 13, 13);
+    float: right; 
+    font-size: 200%;
+    font-weight: bold;
+    margin: -20px 3px 5px 750px;
+    border-radius: 1%;
+
+ 
+   
+  }
+  
+  .fechar:hover,
+  .fechar:focus {
+    color: rgb(107, 3, 107);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  
+  
+  
+  
+
+
+
+  
+ 
+
+
+
 
   

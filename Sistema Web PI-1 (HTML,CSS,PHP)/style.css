@@ -1,5 +1,4 @@
-
-  
+ 
   p.moved-paragraph {
     margin: -50px 20px 10px 45px; /* adiciona margem : topo e lados */
     font-size: medium; /* tamanho da fonte do rodapé*/
@@ -15,6 +14,43 @@
     border-radius: 15px;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.servico-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px; /* Espaçamento entre os itens */
+}
+
+.servico-item {
+  margin-top: auto;
+  border: none;
+  padding: 10px;
+}
+
+
+.footer {
+  min-height: 1px;
+  text-align: center; /* Alinha o conteúdo do footer no centro */
+  width: 100%; /* Define a largura do footer para ocupar toda a largura da página */
+}
+
+.redes{
+  width: center;
+}
+.social-list {
+  list-style: none;
+ 
+  list-style: none;
+  margin-top: none;
+  
+}
+
+.logo {
+  width: 200px; /* Defina a largura desejada */
+  height: auto; /* Altura automática para manter a proporção original da imagem */
+
+}
+
  @media screen  and (max-width:758px){ /*esta parte é do formato de tela do celular*/
  
 
@@ -52,28 +88,10 @@
 
   }
   
+  
 
  }
-
-
-
-
-
  
-
- 
- 
-   
-
- 
-    
-   
-    
-
-
-
-
-  
   .data{
     border: none;
     padding: 30px;
@@ -99,8 +117,7 @@
     border-radius: 20px;
     margin: -5% 2% 1% 40%;
     font-size: 100%;
-   
-    
+     
    
     
   }
@@ -123,18 +140,3 @@
     text-decoration: none;
     cursor: pointer;
   }
-  
-  
-  
-  
-  
-
-
-
-  
- 
-
-
-
-
-  

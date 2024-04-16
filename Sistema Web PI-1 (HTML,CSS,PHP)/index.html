@@ -4,311 +4,194 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendamento | Estética Beleza</title>
-    <link rel="stylesheet" href="style.css" class="float-right"> 
 
-
-    <style>
-        body{
-            font-family: Arial, Helvetica, sans-serif;
-            background-image: linear-gradient(to right, rgb(174, 50, 231), rgb(174, 50, 231));
+    <link rel="stylesheet" href="styleGrid.css">
+</head>
+    <div class="layout">
+        <header>
+            <!--Cabeçalho da página-->
+            <div class="logo">
+                <a href="https://instagram.com/cleidealves_estetica" target="_blank">
+                    <img src="logo.png" alt="cleidealves_estetica"  class="logo">
+                </a>
+            </div>
             
+            <div id="aviso" class="aviso"> 
+                <span class="fechar" onclick="fecharAviso()">&times;</span>
+                <strong>Horário de funcionamento:  <strong></strong> </strong><br> <br> Terça-feira a sábado, das 8h às 19h30.
+            </div>
 
-           
-
-        }
-
-        .caixa{
-            color: rgb(255, 255, 255);
-            position: absolute;
-            top: 88%;/* Ajuste do layout para não ficar atrapalhando a leitura */ 
-            left: 50%; 
-            transform: translate(-50%,-50%);
-            background-color: rgba(73, 11, 78, 0.7);
-            padding: 20px;  
-            border-radius: 20px;
-           
-        
-} 
-        
-
-        
-            
-        
-     
-fieldset{
-    border: 10px solid rgb(121, 0, 182); /*Define a cor da borda, espaçamento interno, alinhamento do texto, cor de fundo e borda arredondada*/
-}
-legend{   /*fornecer uma legenda */
-    border: 1px solid darkorchid;
-    padding: 10px; 
-    text-align: center;
-    background-color: rgb(172, 105, 234);
-    border-radius: 10px;
-    
-}
-        
-    
-
-.inputBox{ /*facilitar o posicionamento de outros elementos filhos.*/
-    position:relative;
-}
-.inputUser{ /*define o campo em geral fundo/tqamanho/fonte*/
-    background: none;
-    border: none;
-    border-bottom: 1px solid white;
-    outline: none;
-    color: white;
-    font-size: 15px;
-    width: 100%;
-    letter-spacing:2px ;
-    
-
-}
-.labelInput{
-    position: absolute; /*estilizar as etiquetas dos campos de entrada.  quando coloca os dados*/
-    top: 0px;
-    left: 0px;
-    pointer-events: none;
-    transition: .5s;
-
-}
-.inputUser:focus ~ .labelInput,
-.inputUser:valid ~.labelInput{ /*Define o estilo para a etiqueta*/
-    top: -20px;  
-    font-size: 12px;
-    color: darkorchid;
-}
-#datanas{
-            border: none;
-            padding: 8px;          /*estilo para data de nascimento*/
-            border-radius: 10px;
-            outline: none;
-            font-size: 20px;
-            text-align: center;
-            color: rgb(67, 5, 124);
-} 
-#data{           /*estilos para data de agendamento e horário*/
-    border: none;
-            padding: 8px;
-            border-radius: 7px;
-            outline: none;
-            color: rgb(75, 5, 141);
-            font-size: 20px;
-            top: -20px;
-            text-align: center; 
-            transform: translate(1%,-5%)
-            
-
-          
-
-            
-           
-            
-
-}  
-
-          
-
-
-
-
-h2 {         /*Alinha o texto ao centro*/
-  text-align:center;
-  position: relative;
-  top: 10px;
-  left:-348px;
-  font-size: 110%;
-}
-
-
-
-
-
-#submit{              /*fecha a seção o botão final */
-            background-image: linear-gradient(to right,rgb(189, 81, 235), rgb(170, 81, 238));
-            width: 100%;
-            border: none;
-            padding: 15px;  
-            color: white;
-            font-size: 15px;
-            cursor: pointer;
-            border-radius: 10px;
-        }
-
-        
-        
-
-
-
-    </style>
-</head>       
-<body>     
-  
-     
-
-    <div id="aviso" class="aviso"> 
-        <span class="fechar" onclick="fecharAviso()">&times;</span>
-        <strong>Horário de funcionamento:  <strong></strong> </strong><br> <br> Terça-feira a sábado, das 8h às 19h30.
-      </div>
-      
-      <script src="script.js"></script>
-
-
-    
-
-      
-    <div class ="caixa">
-        <form action = "config.php" method="POST">
-            <fieldset>
-                <legend><b>Agendamento de Clientes</b></legend> 
-                
-                <br>
-                
-                <div class="inputBox">
-                    <input type="text" name="nome" id="nome" class="inputUser" required>
-                    <label for="nome" class="labelInput"> Nome completo</label>
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <input type="text" name="email" id="email" class="inputUser" required>
-                    <label for="email"class="labelInput"> Email</label>
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <input type="tel" name="telefone" id="telefone" class="inputUser" required>
-                    <label for="telefone"class="labelInput"> Telefone</label>
-                </div>
-                <br>
-                <p>Sexo:</p>
-                <input type="radio" class="genero" id="feminino" name="genero" value="feminino" required>
-                <label for="feminino">Feminino</label>
-                
-                <input type="radio"  class="genero" id="masculino" name="genero" value="masculino" required>
-                <label for="masculino">Masculino</label>
-                
-                <input type="radio"  class="genero" id="outro" name="genero" value="outro" required>
-                <label for="outro">Outro</label>
-                <br><br>
-                <div>
-                
-                    <label for="datanas"> <b>Data de Nascimento:</b></label>
-                    <input type="date" name="datanas" id="datanas"  required>
-                </div>
-                <br><br>
-
-                
-                <div class="inputBox">
-                    <input type="text" name="cidade" id="cidade" class="inputUser" required>
-                    <label for="cidade"class="labelInput"> Cidade</label>
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <input type="text" name="estado" id="estado" class="inputUser" required>
-                    <label for="estado"class="labelInput"> Estado</label>
-                </div>
-                <br><br>
-                <div class="inputBox">
-                    <input type="text" name="endereco" id="endereco" class="inputUser" required>
-                    <label for="endereco"class="labelInput"> Endereço</label>
-                </div>
-                
-
-                
-                
-              <!-- Ajusto do layout para Desktop -->
-
-                <h3>Definir tipo de serviço:</h3>
-                
-                <div class="servico-grid">
-                    <div class="servico-item">
-                        <input type="radio" name="service" value="limpeza de pele" checked="checked" /> Limpeza de pele
-                    </div>
-                    <div class="servico-item">
-                        <input type="radio" name="service" value="Depilacao Corporal" /> Depilação corporal
-                    </div>
-                    <div class="servico-item">
-                        <input type="radio" name="service" value="Cutilagem spa" /> Cutilagem / SPA
-                    </div>
-                    <div class="servico-item">
-                        <input type="radio" name="service" value="Design de Sob" checked="checked" /> Design de sobrancelha com henna
-                    </div>
-                    <div class="servico-item">
-                        <input type="radio" name="service" value="Micropigmentacao" checked="checked" /> Micropigmentação
-                    </div>
-                    <div class="servico-item">
-                        <input type="radio" name="service" value="Massagem Modeladora" checked="checked" /> Massagem modeladora
-                    </div>
-                    <div class="servico-item">
-                        <input type="radio" name="service" value="Hidra gloss / BB Glow" checked="checked" /> Hidra gloss / BB Glow
-                    </div>
-                    <div class="servico-item">
-                        <input type="radio" name="service" value="Extensao de cilios" checked="checked" /> Extensão de cílios
-                    </div>
-                    <div class="servico-item">
-                        <input type="radio" name="service" value="Cabeleireira" checked="checked" /> Cabeleireira
-                    </div>
-                </div>
-                
-
-            
-                    
-
-<div >
-    <br>
-    <label for="data"><b>Definir data e horas:</b><br></label>
-    <br>
-    <input type="datetime-local" name="data" id="data"  required>
-    <br>
-
-
-
-
-  
-
-
-
-    <br> <br> <br> <br><br>
-
-
-
-  </div>
-  
-                 
-                        
-                <input type="submit" name="submit" id="submit">
-               
-            </form> 
-
-            </fieldset>
-        </form>
-        <div class="footer">
             <div class="redes">
                 
-                <ul class="social-list">
-                    <a href="https://instagram.com/cleidealves_estetica" target="_blank">
-                    <img src="logo.png" alt="cleidealves_estetica"  class="logo">
-                    </a>
+                
                     
-                    <li>
-                        <a
-                        target="_blank"
-                        href="https://instagram.com/cleidealves_estetica" >
-                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M16 21C18.7614 21 21 18.7614 21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21Z" stroke="#FA41FE" stroke-width="2" stroke-miterlimit="10"/>
-                                <path d="M21.5 4.5H10.5C7.18629 4.5 4.5 7.18629 4.5 10.5V21.5C4.5 24.8137 7.18629 27.5 10.5 27.5H21.5C24.8137 27.5 27.5 24.8137 27.5 21.5V10.5C27.5 7.18629 24.8137 4.5 21.5 4.5Z" stroke="#FA41FE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M22.5 11C23.3284 11 24 10.3284 24 9.5C24 8.67157 23.3284 8 22.5 8C21.6716 8 21 8.67157 21 9.5C21 10.3284 21.6716 11 22.5 11Z" fill="#FA41FE"/>
-                            </svg>
+                        <div class="instagram"><a
+                            target="_blank"
+                            href="https://instagram.com/cleidealves_estetica" >
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 21C18.7614 21 21 18.7614 21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21Z" stroke="#FA41FE" stroke-width="2" stroke-miterlimit="10"/>
+                                    <path d="M21.5 4.5H10.5C7.18629 4.5 4.5 7.18629 4.5 10.5V21.5C4.5 24.8137 7.18629 27.5 10.5 27.5H21.5C24.8137 27.5 27.5 24.8137 27.5 21.5V10.5C27.5 7.18629 24.8137 4.5 21.5 4.5Z" stroke="#FA41FE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M22.5 11C23.3284 11 24 10.3284 24 9.5C24 8.67157 23.3284 8 22.5 8C21.6716 8 21 8.67157 21 9.5C21 10.3284 21.6716 11 22.5 11Z" fill="#FA41FE"/>
+                                </svg>
+                            </a>
+                        </div>
+
+
+                        <div class="facebook">
+                            <a target="_blank" href="https://www.facebook.com/cleide.alves.7543/">
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="32" height="32" viewBox="0 0 48 48">
+                                    <path fill="#039be5" d="M24 5A19 19 0 1 0 24 43A19 19 0 1 0 24 5Z"></path><path fill="#fff" d="M26.572,29.036h4.917l0.772-4.995h-5.69v-2.73c0-2.075,0.678-3.915,2.619-3.915h3.119v-4.359c-0.548-0.074-1.707-0.236-3.897-0.236c-4.573,0-7.254,2.415-7.254,7.917v3.323h-4.701v4.995h4.701v13.729C22.089,42.905,23.032,43,24,43c0.875,0,1.729-0.08,2.572-0.194V29.036z"></path>
+                                    </svg>
+                            </a>
+                        </div>
+
+                        <div class="whatsapp">
+                            <a href="https://api.whatsapp.com/send?phone=5511962698133&text=Ol%C3%A1%2C%20gostaria%20de%20falar%20sobre%20os%20servi%C3%A7os%20do%20seu%20salão!" target="_blank">
+                                <svg enable-background="new 0 0 512 512" width="32" height="32" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="M256.064,0h-0.128l0,0C114.784,0,0,114.816,0,256c0,56,18.048,107.904,48.736,150.048l-31.904,95.104  l98.4-31.456C155.712,496.512,204,512,256.064,512C397.216,512,512,397.152,512,256S397.216,0,256.064,0z" fill="#4CAF50"/><path d="m405.02 361.5c-6.176 17.44-30.688 31.904-50.24 36.128-13.376 2.848-30.848 5.12-89.664-19.264-75.232-31.168-123.68-107.62-127.46-112.58-3.616-4.96-30.4-40.48-30.4-77.216s18.656-54.624 26.176-62.304c6.176-6.304 16.384-9.184 26.176-9.184 3.168 0 6.016 0.16 8.576 0.288 7.52 0.32 11.296 0.768 16.256 12.64 6.176 14.88 21.216 51.616 23.008 55.392 1.824 3.776 3.648 8.896 1.088 13.856-2.4 5.12-4.512 7.392-8.288 11.744s-7.36 7.68-11.136 12.352c-3.456 4.064-7.36 8.416-3.008 15.936 4.352 7.36 19.392 31.904 41.536 51.616 28.576 25.44 51.744 33.568 60.032 37.024 6.176 2.56 13.536 1.952 18.048-2.848 5.728-6.176 12.8-16.416 20-26.496 5.12-7.232 11.584-8.128 18.368-5.568 6.912 2.4 43.488 20.48 51.008 24.224 7.52 3.776 12.48 5.568 14.304 8.736 1.792 3.168 1.792 18.048-4.384 35.52z" fill="#FAFAFA"/></svg>
+                            </a>
+                        </div>
+                    
+                     
+            </div>  
+
+        </header>
+        <!--Barra de menu lateral esquerda 
+            <nav>
+            </nav>
+        -->
+      
+        <main>
+            <!--Conteúdo da página-->
+            <div class="caixa">
+                <form action="config.php" method="post">
+                    <fieldset>
+                        <legend><b>Agendamento de Clientes</b></legend>
+                        <div class="inputBox">
+                            <br>
+                            <input type="text" name="nome" id="nome" class="inputUser" required>
+                            <label for="nome" class="labelInput"> Nome completo</label>
+
+                            <input type="text" name="email" id="email" class="inputUser" required>
+                            <label for="email"class="labelInput"> Email</label>
+
+                            <input type="tel" name="telefone" id="telefone" class="inputUser" required>
+                            <label for="telefone"class="labelInput"> Telefone</label>
+                        </div>
+                        <div class="inputBox">
+                            <div style=" width: 100%;">
+
+                                <p>Sexo:</p>
+                                <input type="radio" class="genero" id="feminino" name="genero" value="feminino" required>
+                                <label for="feminino">Feminino</label>
+                                <br>
+                                <input type="radio"  class="genero" id="masculino" name="genero" value="masculino" required>
+                                <label for="masculino">Masculino</label>
+                                <br>
+                                <input type="radio"  class="genero" id="outro" name="genero" value="outro" required>
+                                <label for="outro">Prefiro não me indetificar</label>
+
+                                <br>
+                                <br>
                             
-                        </a>
-                        
-                    </li>
-        
-                                          
-                </ul>
-                <footer><small>&copy; 2024 Todos os direitos reservados</small></footer>
+                                <label  for="datanas"> <b>Data de Nascimento:</b></label><br><br>
+                                <input type="date" name="datanas" id="datanas"  required>
+                                
+                            </div>
+
+                            <div class="inputBox">
+                                
+                                <br>
+                                <input type="text" name="cidade" id="cidade" class="inputUser" required>
+                                <label for="cidade"class="labelInput"> Cidade</label>
+
+                                
+                                <input type="text" name="estado" id="estado" class="inputUser" required>
+                                <label for="estado"class="labelInput"> Estado</label>
+
+                                
+                                <input type="text" name="endereco" id="endereco" class="inputUser" required>
+                                <label for="endereco"class="labelInput"> Endereço</label>
+                
+                            </div>
+
+                            <h3>Definir tipo de serviço:</h3>
+                            <div class="servico-grid">
+                                <div class="servico-item">
+                                    <input type="checkbox" name="service" value="limpeza de pele"  /> Limpeza de pele
+                                    <span class="preco" data-preco="50"> | R$50,00</span>
+                                </div>
+                                <div class="servico-item">
+                                    <input type="checkbox" name="service" value="Depilacao Corporal" /> Depilação corporal
+                                    <span class="preco" data-preco="50"> | R$50,00</span>
+                                </div>
+                                <div class="servico-item">
+                                    <input type="checkbox" name="service" value="Cutilagem spa" /> Cutilagem / SPA
+                                    <span class="preco" data-preco="50"> | R$50,00</span>
+                                </div>
+                                <div class="servico-item">
+                                    <input type="checkbox" name="service" value="Design de Sob"  /> Design de sobrancelha com henna
+                                    <span class="preco" data-preco="50"> | R$50,00</span>
+                                </div>
+                                <div class="servico-item">
+                                    <input type="checkbox" name="service" value="Micropigmentacao"  /> Micropigmentação
+                                    <span class="preco" data-preco="50"> | R$50,00</span>
+                                </div>
+                                <div class="servico-item">
+                                    <input type="checkbox" name="service" value="Massagem Modeladora"  /> Massagem modeladora
+                                    <span class="preco" data-preco="50"> | R$50,00</span>
+                                </div>
+                                <div class="servico-item">
+                                    <input type="checkbox" name="service" value="Hidra gloss / BB Glow" /> Hidra gloss / BB Glow
+                                    <span class="preco" data-preco="50"> | R$50,00</span>
+                                </div>
+                                <div class="servico-item">
+                                    <input type="checkbox" name="service" value="Extensao de cilios" /> Extensão de cílios
+                                    <span class="preco" data-preco="50"> | R$50,00</span>
+                                </div>
+                                <div class="servico-item">
+                                    <input type="checkbox" name="service" value="Cabeleireira" /> Cabeleireira
+                                    <span class="preco" data-preco="50"> | R$50,00</span>
+                                </div>
+
+                                <br>
+                                <br>
+                                
+            
+                            </div>
+
+                            <div style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                                <p style=" font-size: 30px;" id="total">Total: R$0,00</p>
+
+                                <strong>Os valores devem ser acertados no estabelimento no dia agendado!</strong>
+                            </div>
+
+                            <div style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                                <br>
+                                <label for="data"><b>Definir data e horas:</b><br></label>
+                                <br>
+                                <input type="datetime-local" name="data" id="data"  required>
+                                <br>
+                                <br>
+
+                            </div>
+                            
+                            <input type="submit" name="submit" id="submit">
+            
+                        </div>
+                    </fieldset>
+                </form>
             </div>
-        </div>
+        </main>
+        
+        <footer>
+            <!--Rodapé da página-->  
+            <small> &copy; 2024 Todos os direitos reservados</small>
+        </footer>
     </div>
+<body>
     
+    <!--Arquivo JavaScript-->
+    <script src="script.js"></script>
+
 </body>
 </html>

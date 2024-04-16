@@ -51,92 +51,275 @@
 
 }
 
- @media screen  and (max-width:758px){ /*esta parte é do formato de tela do celular*/
- 
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(to right, rgb(174, 50, 231), rgb(174, 50, 231));
+  color: rgb(255, 255, 255);
+}
 
-   .aviso {                    /*arrumar isso é crucial, é notificação*/
-    padding: 2%;
-    background-color: #900f0f;
-    color: rgb(0, 0, 0) ;
-    position: fixed;
-    top: 10%;
-    width: 80%; /*ajustar para 80%*/
-    z-index: 1;
-    text-align: center;
-    border-radius: 20px;
-    margin: -5% 2% 1% 2%; /*ajustar de 40% para 2%*/
-    font-size: 20%;
-    
-   
-    
+
+.layout{
+  display: grid;
+  grid-template-rows: 60px 60px auto 60px;
+  grid-template-columns: 1fr;
+  grid-template-areas: 'header' 'sidebar' 'main' 'footer';
+  height: 100vh;
+}
+
+.inputbox{
+  position:relative;
+}
+
+.servico-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px; /* Espaçamento entre os itens */
+}
+
+@media (max-width: 768px) { /* layout duas colunas */
+  .servico-grid {
+      grid-template-columns: repeat(2, 1fr); /* Define duas colunas */
   }
-  
+}
 
-    .caixa{
-      width: 88%;
-      margin-top: 88px;
-      background-image: linear-gradient(to right, rgb(200, 109, 241), rgb(186, 88, 231));
-    }
-    
-  
-     
-      
-  p.moved-paragraph {
-    margin: -50px 20px 10px 45px; /* adiciona margem : topo e lados */
-    font-size: small; /* tamanho da fonte do rodapé*/
-    text-align:center; /*centralizar opcional*/
-
+@media (max-width: 650px) { /* Layout uma coluna */
+  .servico-grid {
+      grid-template-columns: repeat(1, 1fr); /* Define duas colunas */
   }
-  
-  
+}
 
- }
- 
-  .data{
-    border: none;
-    padding: 30px;
-    border-radius: 20px;
-    outline: none;
-    font-size: -120px;
-    text-align:  left;
-    color: rgb(248, 248, 248);
-    top: -30px;
-    left:-30px;
- 
+.aviso {
+  padding: 1%;
+  background-color: #f3f3f3;
+  color: rgb(0, 0, 0);
+  position: fixed;
+  top: 15%;
+  width: 20%;
+  z-index: 1;
+  text-align: center;
+  border-radius: 20px;
+  margin: -5% 2% 1% 40%;
+  font-size: 100%;
+  max-width: 300px; /* Tamanho máximo da div */
+  font-size: 16px;
+  z-index: 9999;
+}
 
-  }
+@media screen and (max-width: 700px) {
   .aviso {
-    padding: 1%;
-    background-color: #f3f3f3;
-    color: rgb(0, 0, 0) ;
-    position: fixed;
-    top: 10%;
-    width: 20%;
-    z-index: 1;
-    text-align: center;
-    border-radius: 20px;
-    margin: -5% 2% 1% 40%;
-    font-size: 100%;
-     
-   
-    
+      max-width: 70%; /* Tamanho máximo ajustado para telas menores */
+      width: 80%; /* Reduz a largura da div para caber em telas menores */
+      left: 10%; /* Posicionamento ajustado para telas menores */
+      margin: -5% auto; /* Centraliza a div horizontalmente */
+      font-size: 14px; /* Diminui a fonte dos textos */
   }
-  
-  .fechar {
-    color: rgb(231, 13, 13);
-    float: right; 
-    font-size: 200%;
-    font-weight: bold;
-    margin: -20px 3px 5px 750px;
-    border-radius: 1%;
+}
 
- 
-   
+
+
+.fechar {
+  color: rgb(231, 13, 13);
+  float: right; 
+  font-size: 200%;
+  font-weight: bold;
+  margin: -20px 3px 5px 750px;
+  border-radius: 1%;
+}
+
+.fechar:hover,
+.fechar:focus {
+  color: rgb(107, 3, 107);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.logo {
+  position: fixed;
+  top: 20px; /* ajusta a distância do topo */
+  left: 20px; /* ajusta a distância da esquerda */
+}
+
+.logo img {
+  width: 300px; /* ajusta o tamanho da imagem */
+  height: auto; /* mantém a proporção */
+}
+
+#datanas{
+  border: none;
+  padding: 8px;          /*estilo para data de nascimento*/
+  border-radius: 10px;
+  outline: none;
+  font-size: 20px;
+  text-align: center;
+  color: rgb(67, 5, 124);
+} 
+#data{           /*estilos para data de agendamento e horário*/
+border: none;
+  padding: 8px;
+  border-radius: 7px;
+  outline: none;
+  color: rgb(75, 5, 141);
+  font-size: 20px;
+  top: -20px;
+  text-align: center; 
+  transform: translate(1%,-5%)
+}  
+
+h2 {         /*Alinha o texto ao centro*/
+text-align:center;
+position: relative;
+top: 10px;
+left:-348px;
+font-size: 110%;
+}
+
+#submit{              /*fecha a seção o botão final */
+  background-image: linear-gradient(to right,rgb(189, 81, 235), rgb(170, 81, 238));
+  width: 100%;
+  border: none;
+  padding: 15px;  
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.caixa{
+  color: rgb(255, 255, 255);
+  position:relative;
+  top: 50%;/* Ajuste do layout para não ficar atrapalhando a leitura */ 
+  left: 50%; 
+  transform: translate(-50%,-50%);
+  background-color: rgba(73, 11, 78, 0.7);
+  padding: 20px;  
+  border-radius: 20px;
+  width:60%;
+}
+
+@media (min-width: 600px){
+  .layout{
+      display: grid;
+      grid-template-rows: 60px auto 60px;
+      grid-template-columns: 160px auto auto;
+      grid-template-areas: 
+      'header header header'
+      'sidebar main main'
+      'footer footer footer';
   }
+  .caixa{
+      width: 80%; /* Largura reduzida para telas menores que 700px */
+  }
+     
+}
+/* Ajuste do tamanho da logo para Mobile */
+@media screen and (max-width: 768px) {
+  .logo img {
+      width: 80px; 
+      height: auto; 
+  }
+}
+
+header{
+  grid-area: header;
   
-  .fechar:hover,
-  .fechar:focus {
-    color: rgb(107, 3, 107);
-    text-decoration: none;
-    cursor: pointer;
+}
+footer{
+  grid-area: footer;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;    
+  box-sizing: border-box;
+  
+}
+nav{
+  grid-area: sidebar;
+  
+ 
+}
+main{
+  grid-area: main;
+  
+}
+
+legend{   /*fornecer uma legenda */
+  border: 1px solid darkorchid;
+  padding: 10px; 
+  text-align: center;
+  background-color: rgb(172, 105, 234);
+  border-radius: 10px;
+  
+}
+.inputUser{ /*define o campo em geral fundo/tamanho/fonte*/
+  background: none;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+  color: white;
+  font-size: 15px;
+  width: 100%;
+  letter-spacing:2px ;
+  
+
+}
+.inputUser:focus ~ .labelInput,
+.inputUser:valid ~.labelInput{ /*Define o estilo para a etiqueta*/
+  top: -20px;  
+  font-size: 12px;
+  color: darkorchid;
+}
+
+#datanas{
+  border: none;
+  padding: 8px;          /*estilo para data de nascimento*/
+  border-radius: 10px;
+  outline: none;
+  font-size: 20px;
+  text-align: center;
+  color: rgb(67, 5, 124);
+} 
+#data{           /*estilos para data de agendamento e horário*/
+border: none;
+  padding: 8px;
+  border-radius: 7px;
+  outline: none;
+  color: rgb(75, 5, 141);
+  font-size: 20px;
+  top: -20px;
+  text-align: center; 
+  transform: translate(1%,-5%)
+}  
+
+.redes{
+  position: fixed;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+.redes > div {
+  margin-right: 20px; /* Adiciona espaço entre as divs */
+}
+
+@media screen and (max-width: 850px) {
+  .redes {
+      flex-direction: column; /* Altera a direção para empilhar os itens verticalmente */
+      align-items: flex-end; /* Alinha os itens à direita */
   }
+
+  .redes > div {
+      margin-right: 0; /* Remove o espaço entre as divs quando empilhadas */
+      margin-bottom: 20px; /* Adiciona espaço entre as divs */
+  }
+}
+
+
+.labelInput{
+  position: relative; /*estilizar as etiquetas dos campos de entrada.  quando coloca os dados*/
+  top: -20px;
+  left: 0px;
+  pointer-events: none;
+  transition: .5s;
+
+}

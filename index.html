@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento | Estética Beleza</title>
+    <link rel="stylesheet" href="style.css" class="float-right"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+     <script src="script.js"></script>
+     
+
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(to top,#D2E2FB 30%, #86A8DB);
+
+         
+              
+
+           
+
+        }
+
+        .caixa{
+            color: rgb(255, 255, 255);
+            position: absolute;
+            top: 88%;/* Ajuste do layout para não ficar atrapalhando a leitura */ 
+            left: 50%; 
+            transform: translate(-50%,-50%);
+            background-image: linear-gradient(to right, rgb(153, 77, 246), rgb(165, 79, 222));
+            padding: 20px;  
+            border-radius: 20px;
+           
+;
+           
+        
+} 
+        
+
+        
+            
+        
+     
+fieldset{
+    border: 10px solid rgb(201, 134, 235);
+    border-radius: 15px; /*Define a cor da borda, espaçamento interno, alinhamento do texto, cor de fundo e borda arredondada*/
+}
+legend{   /*fornecer uma legenda */
+    border: 1px solid rgb(188, 114, 226);
+    padding: 15px; 
+    text-align: center;
+    background-color: rgb(172, 105, 234);
+    border-radius: 15px;
+    
+}
+        
+    
+
+.inputBox{ /*facilitar o posicionamento de outros elementos filhos.*/
+    position:relative;
+}
+.inputUser{ /*define o campo em geral fundo/tqamanho/fonte*/
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    width: 100%;
+    letter-spacing:2px ;
+    
+
+}
+.labelInput{
+    position: absolute; /*estilizar as etiquetas dos campos de entrada.  quando coloca os dados*/
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+    transition: .5s;
+
+}
+.inputUser:focus ~ .labelInput,
+.inputUser:valid ~.labelInput{ /*Define o estilo para a etiqueta*/
+    top: -20px;  
+    font-size: 12px;
+    color: darkorchid;
+}
+#datanas{
+            border: none;
+            padding: 8px;          /*estilo para data de nascimento*/
+            border-radius: 10px;
+            outline: none;
+            font-size: 20px;
+            text-align: center;
+            color: rgb(67, 5, 124);
+} 
+#data{           /*estilos para data de agendamento e horário*/
+    border: none;
+            padding: 8px;
+            border-radius: 7px;
+            outline: none;
+            color: rgb(75, 5, 141);
+            font-size: 20px;
+            top: -20px;
+            text-align: center; 
+            transform: translate(1%,-5%)
+            
+
+          
+
+            
+           
+            
+
+}  
+
+          
+
+
+
+
+h2 {         /*Alinha o texto ao centro*/
+  text-align:center;
+  position: relative;
+  top: 10px;
+  left:-348px;
+  font-size: 110%;
+}
+
+
+
+
+
+#submit{              /*fecha a seção o botão final */
+            background-image: linear-gradient(to right,rgb(189, 81, 235), rgb(170, 81, 238));
+            width: 100%;
+            border: 15px;
+            padding: 15px;  
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 20px;
+           
+           
+           
+        }
+
+        
+        
+
+
+
+    </style>
+</head>       
+<body>   
+    <header> <img src="logo.png"  class= "logo1" alt="cleidealves_estetica " > 
+    <nav>
+        <a class="ativo" href="file:///C:/xampp/htdocs/agendamento/inicio.html#">Inicio</a> 
+        <a href="file:///C:/xampp/htdocs/agendamento/index.html#">Agenda</a>
+        <a href="file:///C:/xampp/htdocs/agendamento/servicos.html">Serviços</a>
+        <a href="file:///C:/xampp/htdocs/agendamento/sobre.html">Sobre</a>
+
+       
+        
+
+   
+       
+       
+     
+    
+
+        <script src="java.js"></script>
+
+
+
+
+    </nav>
+    
+    
+    </header>  
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  
+     
+
+    
+      
+      <script src="script.js"></script>
+      
+      
+      <script>
+        // Obtém a data atual
+        const data = new Date();
+    
+        // Formata a data no formato brasileiro
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const dataFormatada = data.toLocaleDateString('pt-BR', options);
+    
+        // Exibe a data formatada na página
+        document.getElementById('data-formatada').textContent = dataFormatada;
+      </script>
+
+<div class="container">
+    <!-- Content here -->
+  </div>
+    
+ <section>
+      
+    <div class ="caixa">
+        <form action = "config.php" method="POST">
+            <fieldset>
+                <legend><b>Agendamento de Clientes</b></legend> 
+                
+                <br>
+                
+                <div class="inputBox">
+                    <input type="text" name="nome" id="nome" class="inputUser" required>
+                    <label for="nome" class="labelInput"> Nome completo</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="text" name="email" id="email" class="inputUser" required>
+                    <label for="email"class="labelInput"> Email</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="tel" name="telefone" id="telefone" class="inputUser" required>
+                    <label for="telefone"class="labelInput"> Telefone</label>
+                </div>
+                <br>
+                <p>Sexo:</p>
+                <input type="radio" class="genero" id="feminino" name="genero" value="feminino" required>
+                <label for="feminino">Feminino</label>
+                
+                <input type="radio"  class="genero" id="masculino" name="genero" value="masculino" required>
+                <label for="masculino">Masculino</label>
+                
+                <input type="radio"  class="genero" id="outro" name="genero" value="outro" required>
+                <label for="outro">Outro</label>
+                <br><br>
+                <div>
+                
+                    <label for="datanas"> <b>Data de Nascimento:</b></label>
+                    <input type="date" name="datanas" id="datanas"  required>
+                </div>
+                <br><br>
+
+                
+                <div class="inputBox">
+                    <input type="text" name="cidade" id="cidade" class="inputUser" required>
+                    <label for="cidade"class="labelInput"> Cidade</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="text" name="estado" id="estado" class="inputUser" required>
+                    <label for="estado"class="labelInput"> Estado</label>
+                </div>
+                <br><br>
+                <div class="inputBox">
+                    <input type="text" name="endereco" id="endereco" class="inputUser" required>
+                    <label for="endereco"class="labelInput"> Endereço</label>
+                </div>
+                
+
+                
+                
+              <!-- Ajusto do layout para Desktop -->
+
+                <h3>Definir tipo de serviço:</h3>
+                
+                <div class="servico-grid">
+                    <div class="servico-item">
+                        <input type="radio" name="service" value="limpeza de pele" checked="checked" /> Limpeza de pele
+                    </div>
+                    <div class="servico-item">
+                        <input type="radio" name="service" value="Depilacao Corporal" /> Depilação corporal
+                    </div>
+                    <div class="servico-item">
+                        <input type="radio" name="service" value="Cutilagem spa" /> Cutilagem / SPA
+                    </div>
+                    <div class="servico-item">
+                        <input type="radio" name="service" value="Design de Sob" checked="checked" /> Design de sobrancelha com henna
+                    </div>
+                    <div class="servico-item">
+                        <input type="radio" name="service" value="Micropigmentacao" checked="checked" /> Micropigmentação
+                    </div>
+                    <div class="servico-item">
+                        <input type="radio" name="service" value="Massagem Modeladora" checked="checked" /> Massagem modeladora
+                    </div>
+                    <div class="servico-item">
+                        <input type="radio" name="service" value="Hidra gloss / BB Glow" checked="checked" /> Hidra gloss / BB Glow
+                    </div>
+                    <div class="servico-item">
+                        <input type="radio" name="service" value="Extensao de cilios" checked="checked" /> Extensão de cílios
+                    </div>
+                    <div class="servico-item">
+                        <input type="radio" name="service" value="Cabeleireira" checked="checked" /> Cabeleireira
+                    </div>
+                </div>
+                
+
+            
+                    
+
+<div >
+    <br>
+    <label for="data"><b>Definir data e horas:</b><br></label>
+    <br>
+    <input type="datetime-local" name="data" id="data"  required>
+    <br>
+
+
+
+
+  
+
+
+
+    <br> <br> <br> <br><br>
+
+
+
+  </div>
+  
+                 
+                        
+                <input type="submit" name="submit" id="submit">
+               
+            </form> 
+
+            </fieldset>
+        </form>
+        <div class="footer">
+            <div class="redes">
+                
+                <ul class="social-list">
+                    <a href="https://instagram.com/cleidealves_estetica" target="_blank">
+                    <img src="logo.png" alt="cleidealves_estetica"  class="logo">
+                    </a>
+                    
+                    <li>
+                        <a
+                        target="_blank"
+                        href="https://instagram.com/cleidealves_estetica" >
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 21C18.7614 21 21 18.7614 21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21Z" stroke="#FA41FE" stroke-width="2" stroke-miterlimit="10"/>
+                                <path d="M21.5 4.5H10.5C7.18629 4.5 4.5 7.18629 4.5 10.5V21.5C4.5 24.8137 7.18629 27.5 10.5 27.5H21.5C24.8137 27.5 27.5 24.8137 27.5 21.5V10.5C27.5 7.18629 24.8137 4.5 21.5 4.5Z" stroke="#FA41FE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M22.5 11C23.3284 11 24 10.3284 24 9.5C24 8.67157 23.3284 8 22.5 8C21.6716 8 21 8.67157 21 9.5C21 10.3284 21.6716 11 22.5 11Z" fill="#FA41FE"/>
+                            </svg>
+                            
+                        </a>
+                        
+                    </li>
+        
+                                          
+                </ul>
+                <footer><small>&copy; 2024 Todos os direitos reservados</small></footer>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <nav>
+    <section class="inicio">
+        
+
+
+       
+        <img src="leaf2.png" class="leaf2">
+        <img src="leaf1.png" class="leaf1">
+    </section>
+
+   
+
+    
+    
+</nav>
+   
+            
+    
+    
+</body>
+</html>

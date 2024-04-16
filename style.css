@@ -1,0 +1,235 @@
+ 
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+  
+  p.moved-paragraph {
+    margin: -50px 20px 10px 45px; /* adiciona margem : topo e lados */
+    font-size: medium; /* tamanho da fonte do rodapé*/
+    text-align:center; /*centralizar opcional*/
+   
+   
+  }
+
+
+   
+   
+
+
+.servico-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px; /* Espaçamento entre os itens */
+}
+
+.servico-item {
+  margin-top: auto;
+  border: none;
+  padding: 10px;
+}
+
+
+.footer {
+  min-height: 1px;
+  text-align: center; /* Alinha o conteúdo do footer no centro */
+  width: 100%; /* Define a largura do footer para ocupar toda a largura da página */
+}
+
+.redes{
+  width: center;
+}
+.social-list {
+  list-style: none;
+ 
+  list-style: none;
+  margin-top: none;
+  
+}
+
+.logo {
+  width: 90px; /* Defina a largura desejada */
+  height: auto; /* Altura automática para manter a proporção original da imagem */
+
+}
+.logo1{
+  width: 120px;
+  height: auto;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding: 0 5%;
+  position: absolute;
+  width: 100%;
+
+}
+header nav{
+  display: flex;
+  gap: 30px;
+
+}
+header nav a{
+  color: aliceblue;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 99px;
+  text-decoration: none;
+  transition: 0.3s;
+
+  
+}
+header nav a.ativo{
+  background: rgb(104, 33, 209);
+
+}
+header nav a:hover{
+  background: rgb(104, 33, 209);
+}
+header nav:hover> a:not(:hover){
+  background: none;
+}
+.inicio{
+  display: flex;
+  height: 180dvh;
+  background: linear-gradient(to top,#D2E2FB 30%, #a086db);
+
+
+}
+.inicio img {
+
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  pointer-events: none;
+
+}
+
+
+
+  
+  
+
+
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen  and (max-width:758px){ /*esta parte é do formato de tela do celular*/
+ 
+
+   .aviso {                    /*arrumar isso é crucial, é notificação*/
+    padding: 2%;
+    background-color: #900f0f;
+    color: rgb(0, 0, 0) ;
+    position: fixed;
+    top: 10%;
+    width: 80%; /*ajustar para 80%*/
+    z-index: 1;
+    text-align: center;
+    border-radius: 20px;
+    margin: -5% 2% 1% 2%; /*ajustar de 40% para 2%*/
+    font-size: 20%;
+    
+   
+    
+  }
+  
+
+    .caixa{
+      width: 88%;
+      margin-top: 88px;
+      background-image: linear-gradient(to right, rgb(200, 109, 241), rgb(186, 88, 231));
+    }
+    
+  
+     
+      
+  p.moved-paragraph {
+    margin: -50px 20px 10px 45px; /* adiciona margem : topo e lados */
+    font-size: small; /* tamanho da fonte do rodapé*/
+    text-align:center; /*centralizar opcional*/
+
+  }
+  
+  
+
+ }
+ 
+  .data{
+    border: none;
+    padding: 30px;
+    border-radius: 20px;
+    outline: none;
+    font-size: -120px;
+    text-align:  left;
+    color: rgb(248, 248, 248);
+    top: -30px;
+    left:-30px;
+ 
+
+  }
+  .aviso {
+    padding: 1%;
+    background-color: #f3f3f3;
+    color: rgb(0, 0, 0) ;
+    position: fixed;
+    top: 10%;
+    width: 20%;
+    z-index: 1;
+    text-align: center;
+    border-radius: 20px;
+    margin: -5% 2% 1% 40%;
+    font-size: 100%;
+     
+   
+    
+  }
+  
+  .fechar {
+    color: rgb(231, 13, 13);
+    float: right; 
+    font-size: 200%;
+    font-weight: bold;
+    margin: -20px 3px 5px 750px;
+    border-radius: 1%;
+
+ 
+   
+  }
+  
+  .fechar:hover,
+  .fechar:focus {
+    color: rgb(107, 3, 107);
+    text-decoration: none;
+    cursor: pointer;
+  }

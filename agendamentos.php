@@ -31,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Ver agendamentos</title>
-    <link rel="stylesheet" href="style.css" class="float-right">
+    <link rel="stylesheet" href="estilo.css" class="float-right">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 
@@ -50,13 +50,17 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
         }
         .box{
             color: white;
-            
-
             font-family: Arial, Helvetica, sans-serif;
             flex-wrap: wrap;
-            display: grid;
             column-gap: 1em;
             row-gap: 1em;
+            order: 1;
+        
+
+            
+
+        
+        
            
   
            
@@ -79,16 +83,20 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
 }
 .caixa {
 
-    list-style: none;
-    border: 2px solid #000;
-    padding: 1px;
-    margin: 1px;
+  
+    padding: 10px;
+    margin: 20px;
     text-align: left; /* Alinha o texto à esquerda */
-    max-width: 300px; /* Define uma largura máxima para os itens */
+    max-width: 100%; /* Define uma largura máxima para os itens */
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 10px;
-    background-image: linear-gradient(to right, rgb(190, 50, 231), rgb(195, 29, 221));
-    font-family:Arial, Helvetica, sans-serif;
+  background-color: whitesmoke;
+    position: relative;
+    display: grid;
+  
+
+   
+    
     
     
   
@@ -102,15 +110,18 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
 }
 
 .agendamentos{ 
-     
+     color: black;
     text-transform: uppercase;
     text-align: grid;
     flex-wrap: wrap;
      display: flex;
      order: 1;
-     font-size: small;
+     font-size: medium;
      font-family:Arial, Helvetica, sans-serif;
      border-radius: 10px;
+     display: flex;
+     font: bold;
+     
      
 
 
@@ -125,6 +136,13 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
   
 
 
+}
+.agend{
+    width: 2%;
+    margin-top: -1%;
+    
+    
+    
 }
 
 
@@ -196,7 +214,7 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
         
         <div class='agendamentos' >
         <?php if(isset($result) && $result->num_rows > 0) : ?> 
-        <h2 style="text-align:center">Agendamentos</h2>
+        <h2 class="agend">Agendamentos</h2> 
        
         <table class=""> 
             <?php while($row = $result->fetch_assoc()) :?>
@@ -214,7 +232,7 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
                     <?php echo "<a href='apagar_agendamento.php?id=".$row['id']."'>Apagar</a> ";?>
                 </div>
                     
-                    
+                        
             </thead>           
 
             </table>
@@ -229,7 +247,7 @@ if($_SERVER["REQUEST_METHOD"]== "POST"){
             </ul> 
             </div>
         <?php else :?>
-                <p> <h3> Nenhum agendamento: <h3>  </p> 
+                <p> <h3> <h3>  </p> 
                 <?php endif; ?>
                 </div>
 </body>
